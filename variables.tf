@@ -2,10 +2,12 @@ variable "additional_volume_size" {
     type = number
     description = "The size in GiB of additional volumes"
 }
+
 variable "additional_volume_type" {
     type = string
     description = "The EBS volume type"
 }
+
 variable "additional_volume_count" {
     type = number
     description = "The number of addtional EBS volumes"
@@ -19,27 +21,37 @@ variable "instance_type" {
     type = string
     description = "The ec2 instance type"
 }
+
 variable "instance_count" {
     type = number
     description = "The number of ec2 instances"
 }
+
 variable "account_ids" {
     type  = list(string)
     description = "The list of aws account ids"
+}
+
+variable "iops" {
+    type = number
+    description = "Optional"
 }
 
 variable "infra_environment" {
     type = string
     description = "Environment for infrastructure usually production/developmenti, might need further specification"
 }
+
 variable "project_environment" {
     type = string
     description = "What environment is this project in sandbox, distro, production, etc"
 }
+
 variable "project_type" {
     type = string
     description = "This was originally corral related, may no longer be required"
 }
+
 variable "project_name" {
     type = string
     description = "Name of the project"
@@ -65,6 +77,7 @@ variable "subnet_id" {
         "development" = "subnet-17ee9e3c"
     }
 }
+
 variable "root_volume_size" {
     type = number
     description = "The size of a root volume in GiB"
@@ -74,6 +87,7 @@ variable "root_volume_type" {
     type = string
     description = "The root volume type, currently AWS"
 }
+
 variable "vpc_security_group_ids" {
     type = list(string)
 }

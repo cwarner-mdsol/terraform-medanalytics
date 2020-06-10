@@ -24,7 +24,7 @@ availability_zones = ["us-east-1e", "us-east-1d", "us-east-1c"]
 company="mdsol"
 encryption="true"
 infra_environment="development"
-instance_count="3"
+instance_count=3
 instance_type="c5.4xlarge"
 iops="3000"
 
