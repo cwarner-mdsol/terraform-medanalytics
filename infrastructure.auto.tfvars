@@ -31,7 +31,6 @@ iops="3000"
 ### PROJECT TAGS 
 project_environment = "sandbox"
 project_corral_name = "corral-project_name-corral_type"
-project_creator = "medistrano"
 project_tenant = "medidata"
 project_type = "corral_type_name"
 project_name  = "thisismyproject"
