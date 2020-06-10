@@ -15,6 +15,8 @@ Written for terraform version 0.12.26 and greater
 ## Note
 Currently there are many different ways to modify variables such that this spins up infrastructure in almost any AWS account. The goal is to focus primarily on the "green" and "red" accounts. There are also variables that are likely to be migrated or fall away over time, similary the opposite is true.
 
+Please remove `terraform.tfstate` and `terraform.tfstate.backup` if you are cloning this repo. They are here for example purposes and hold stale state.
+
 ## Startup Example
 Export your AWS_ACCESS_KEY_ID or AWS_SECRET_ACCESS_KEY for green/red or spin this up from a node that has access to the following services in green and red:
 
