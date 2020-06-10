@@ -40,6 +40,6 @@ Export your AWS_ACCESS_KEY_ID or AWS_SECRET_ACCESS_KEY for green/red or spin thi
  * 53 - cwarnerterra-sandbox.imedidata.net. record A ALIAS which points to the Classic ELB
  
  ## Tracking artifacts
- In the case of terraform the current "state" of the artifacts tracked is in the terraform.tfstate file. If changes are to be made they should always be changed there first and then terraform rerun. Hooks can be added to note file modification and/or commit or push and perform some action for review there.
+ In the case of terraform the current "state" of the artifacts tracked is in the terraform.tfstate file. If changes are to be made they should always be changed there first and then terraform rerun. Hooks can be added to note file modification and/or commit/push and perform some action for review there.
 
  
