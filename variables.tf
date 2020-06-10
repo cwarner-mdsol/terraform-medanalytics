@@ -18,7 +18,7 @@ variable "ssl_certificate_id" {
     type = map
     default = {
         "production" = "arn:aws:acm:us-east-1:565378680304:certificate/b0ee6694-7c1b-4d1b-bfec-efb1c4e022b9"
-        "development" = "arn:aws:acm:us-east-1:767904627276:certificate/5fc4656f-7a37-4a30-b37f-481e17c46b4d"
+        "development" = "arn:aws:acm:us-east-1:565378680304:certificate/b7004850-21e5-4810-b7dc-0f492bec36d7
     }
 }
 
