@@ -23,10 +23,10 @@ Export your AWS_ACCESS_KEY_ID or AWS_SECRET_ACCESS_KEY for green/red or spin thi
 * IAM
 * Route53 (in our red account, the records for imedidata.com and imedidata.net live here)
 
-`./terraform apply -auto-approve=true \
-                   -var="project_name=cwarnerterra" \
-                   -var="project_type=runtest" \
-                   -var="project_environment=sandbox"`
+`./terraform apply -auto-approve=true \  
+                   -var="project_name=cwarnerterra" \  
+                   -var="project_type=runtest" \  
+                   -var="project_environment=sandbox"`  
                    
  This spins up something that creates the following artifacts:
  * EC2 - Count (in this case 3) cwarnerterra-sandbox-runtest
