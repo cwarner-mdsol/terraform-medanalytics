@@ -137,7 +137,7 @@ resource "aws_instance" "infra_instance" {
   subnet_id               = var.subnet_id["development"] #subnet_id mappings for different vpc's based on account
   iam_instance_profile    = "${var.project_name}-${var.project_environment}"
   disable_api_termination = false # if you want protection change to true
-  count                   = 3
+  count                   = var.instance_count
   root_block_device {
     volume_size = var.root_volume_size
     volume_type = var.root_volume_type

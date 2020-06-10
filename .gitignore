@@ -1,5 +1,2 @@
 *.lock*
 .terraform/plugins/**
-.terraform/plug
-ins/*
-.terraform/plugins

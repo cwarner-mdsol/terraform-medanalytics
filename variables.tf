@@ -7,6 +7,10 @@ variable "availability_zones" {
 }
 
 variable "instance_type" {}
+variable "instance_count" {
+    type = number
+    description = "The number of ec2 instances"
+}
 variable "account_ids" {}
 variable "infra_environment" {}
 variable "project_environment" {}
