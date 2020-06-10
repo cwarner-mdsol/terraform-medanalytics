@@ -1,0 +1,5 @@
+*.lock*
+.terraform/plugins/**
+.terraform/plug:w
+ins/*
+.terraform/plugins
