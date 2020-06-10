@@ -39,7 +39,7 @@ variable "iops" {
 
 variable "infra_environment" {
     type = string
-    description = "Environment for infrastructure usually production/developmenti, might need further specification"
+    description = "Environment for infrastructure usually production/development, might need further specification"
 }
 
 variable "project_environment" {

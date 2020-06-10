@@ -146,7 +146,7 @@ resource "aws_instance" "infra_instance" {
   }
 
   ebs_block_device {
-    device_name = "/dev/sdb" # addtional vols will have to rotate sdX based on count
+    device_name = "/dev/sdb" # TODO: addtional vols will have to rotate sdX based on count
     volume_type = var.additional_volume_type
     volume_size = var.additional_volume_size
   }

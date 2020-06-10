@@ -1,0 +1,11 @@
+Items to fix or workaround:
+
+An external KV store is required for mappings
+External vols can't be added dynamically and need to be specified must fix that based on /dev/sdX where X is a letter in the alphabet
+Needs to be run from an account to access to r53 in red. It's possible some our our accounts don't have cross-account access.
+Depending on what is to be spun up applications will likely need to store secrets, will use vault for this
+It's possible to get vpc/subnets/regions/azs mixed up once you start changing things especially without access to AWS console.
+Need to assess what tags we are going to keep
+Create hooks to test terraform and then likely send notification somewhere or somehow. Apparatus 
+Tag everything, every artifact needs tags from our terraform
+Possibly much more TODO here but this is a good start.
