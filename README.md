@@ -34,7 +34,7 @@ Export your AWS_ACCESS_KEY_ID or AWS_SECRET_ACCESS_KEY for green/red or spin thi
  This spins up something that creates the following artifacts:
  * EC2 - Count (in this case 3) cwarnerterra-sandbox-runtest
  * ELB - Classic ELB named cwarnerterra-sandbox with SSL arns (via our red account) and the 3 instances assigned
- * IAM - cwarnerterra-sandbox role with cloudinfr-base (default managed policy from the cloudinfrastructure team)
+ * IAM - cwarnerterra-sandbox role with cloudinfr-base attached (default managed policy from the cloudinfrastructure team)
  * 53 - cwarnerterra-sandbox.imedidata.net. record A ALIAS which points to the Classic ELB
  
  ## Tracking artifacts
