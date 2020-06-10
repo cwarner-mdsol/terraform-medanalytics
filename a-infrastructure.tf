@@ -176,7 +176,7 @@ resource "aws_instance" "infra_instance" {
 }
 
 # Route53 records and aliases
-# Needs account to aws red account imedidata.net and imedidata.com zones live in that account
+# Needs access to aws red account imedidata.net and imedidata.com zones live in that account
 # You're thinking we should technically use a CNAME, agreed.
 # Unfortunately AWS charges for CNAME queries, so we'll use an A record as an alias
 # Quick Explanation about the records. Environments have been mapped based on domains
