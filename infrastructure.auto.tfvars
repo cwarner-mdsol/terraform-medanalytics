@@ -1,5 +1,4 @@
-account_ids=<<-ACCOUNT_IDS
-              ["565378680304",
+account_ids=["565378680304",
               "441956962974",
               "859579924064",
               "723623337119",
@@ -14,7 +13,6 @@ account_ids=<<-ACCOUNT_IDS
               "076395046979",
               "835972663416",
               "720040221487"]
-            ACCOUNT_IDS
 
 additional_volume_size="110"
 additional_volume_type="gp2"

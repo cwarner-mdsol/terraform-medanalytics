@@ -42,6 +42,42 @@ variable "infra_environment" {
     description = "Environment for infrastructure usually production/development, might need further specification"
 }
 
+variable "aws_account" {
+    type = map
+    description = "AWS account id based on infra_environment, may have to add color to the mix"
+    default = {
+        "production" = "565378680304"
+        "development" = "767904627276"
+    }
+} 
+
+variable "infra_secgroup" {
+    type = map
+    description = "Infrastructure Cloud app secgroup"
+    default = {
+        "production" = "sg-9c9711e4"
+        "development" = "sg-046cda63"
+    }
+}
+
+variable "infra_vpc" {
+    type = map
+    description = "Infrastructure VPC"
+    default = {
+        "production" = "vpc-e6033282"
+        "development" = "vpc-be39dfda"
+    }
+}
+
+variable "infra_zone" {
+    type = map
+    description = "AWS route53 zone"
+    default = {
+        "production" = "imedidata.com"
+        "development" = "imedidata.net"
+    }
+}
+
 variable "project_environment" {
     type = string
     description = "What environment is this project in sandbox, distro, production, etc"
@@ -73,9 +109,9 @@ variable "ssl_certificate_id" {
 variable "subnet_id" {
     type = map
     default = {
-        "production" = "subnet-2343242"
-        "development" = "subnet-17ee9e3c"
-    }
+        "development" = ["subnet-17ee9e3c", "subnet-77211500", "subnet-c0c4009c"]
+        "production" = ["blah"]
+   }
 }
 
 variable "root_volume_size" {

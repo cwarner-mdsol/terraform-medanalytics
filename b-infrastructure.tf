@@ -12,9 +12,11 @@ data "aws_instances" "infra_instance" {
 # availability_zones should be updated periodically in an external kv store
 # if in a vpc only "subnets" is required
 
+# Medistrano Private Green Subnets
+# subnet-17ee9e3c, subnet-77211500, subnet-c0c4009c
 resource "aws_elb" "infra_load_balancer" {
   name                = "${var.project_name}-${var.project_environment}"
-  subnets             = ["subnet-17ee9e3c"]
+  subnets             = ["subnet-17ee9e3c", "subnet-77211500", "subnet-c0c4009c"]
 
 # LISTENERS
   listener {
