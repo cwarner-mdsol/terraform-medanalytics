@@ -60,6 +60,15 @@ variable "infra_secgroup" {
     }
 }
 
+variable "infra_elb_secgroup" {
+    type = map
+    description = "Infrastructure Security Groups for ELB"
+    default = {
+        "production" = ["blah"]
+        "development" = ["sg-0e7a7d54f2c62c1bc", "sg-aab965d0"]
+    }
+}
+
 variable "infra_vpc" {
     type = map
     description = "Infrastructure VPC"
@@ -101,8 +110,8 @@ variable "region" {
 variable "ssl_certificate_id" {
     type = map
     default = {
-        "production" = "arn:aws:acm:us-east-1:565378680304:certificate/b0ee6694-7c1b-4d1b-bfec-efb1c4e022b9"
-        "development" = "arn:aws:acm:us-east-1:565378680304:certificate/b7004850-21e5-4810-b7dc-0f492bec36d7"
+        "production"  = "arn:aws:acm:us-east-1:565378680304:certificate/b0ee6694-7c1b-4d1b-bfec-efb1c4e022b9"
+        "development" = "arn:aws:acm:us-east-1:767904627276:certificate/c058bd28-26a0-4cd4-a157-ba1df2287ba2"
     }
 }
 

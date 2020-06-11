@@ -198,7 +198,7 @@ resource "aws_route53_record" "infra_dns_record" {
   zone_id         = "${aws_route53_zone.infra_dns.zone_id}"
   name            = "${var.project_name}-${var.project_environment}.${var.infra_zone["${var.infra_environment}"]}"
   type            = "A"
-  allow_overwrite = false # for now, this should be true as default
+  allow_overwrite = true # for now, this should be true as default
 
   alias {
     name                   = "${aws_elb.infra_load_balancer.dns_name}"

@@ -12,11 +12,17 @@ data "aws_instances" "infra_instance" {
 # availability_zones should be updated periodically in an external kv store
 # if in a vpc only "subnets" is required
 
-# Medistrano Private Green Subnets
+# Private Green Subnets
 # subnet-17ee9e3c, subnet-77211500, subnet-c0c4009c
+
+# Green sec groups
+# sg-0e7a7d54f2c62c1bc (cloud-natgw)
+# sg-aab965d0 (cloud-mdsol)
+
 resource "aws_elb" "infra_load_balancer" {
   name                = "${var.project_name}-${var.project_environment}"
   subnets             = "${var.subnet_id["${var.infra_environment}"]}"
+  security_groups     = "${var.infra_elb_secgroup["${var.infra_environment}"]}" 
 
 # LISTENERS
   listener {
