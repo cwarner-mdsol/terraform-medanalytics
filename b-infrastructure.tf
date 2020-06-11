@@ -16,7 +16,7 @@ data "aws_instances" "infra_instance" {
 # subnet-17ee9e3c, subnet-77211500, subnet-c0c4009c
 resource "aws_elb" "infra_load_balancer" {
   name                = "${var.project_name}-${var.project_environment}"
-  subnets             = ["subnet-17ee9e3c", "subnet-77211500", "subnet-c0c4009c"]
+  subnets             = "${var.subnet_id["${var.infra_environment}"]}"
 
 # LISTENERS
   listener {
