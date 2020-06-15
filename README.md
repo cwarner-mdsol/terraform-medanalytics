@@ -30,7 +30,8 @@ Export your AWS_ACCESS_KEY_ID or AWS_SECRET_ACCESS_KEY for green/red or spin thi
                    -var="project_name=cwarnerterra" \  
                    -var="project_type=runtest" \  
                    -var="project_environment=sandbox" \
-                   -var="instance_count=3"
+                   -var="instance_count=3" \
+                   -var="infra_environment=development"
 ```
 
  This spins up something that creates the following artifacts:
