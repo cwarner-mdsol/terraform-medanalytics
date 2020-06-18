@@ -26,6 +26,9 @@ instance_count=3
 instance_type="c5.4xlarge"
 iops="3000"
 
+non_prod_comment="Non-Production imedidata domain"
+prod_comment="Production imedidata domain"
+
 ### PROJECT TAGS 
 project_environment = "sandbox"
 project_corral_name = "corral-project_name-corral_type"

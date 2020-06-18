@@ -10,6 +10,7 @@
 provider "aws" {
   profile = "ec2-default"
   region  = var.region
+
 }
 
 data "aws_ami" "core-cis-ubuntu" {
@@ -190,11 +191,27 @@ resource "aws_instance" "infra_instance" {
 # Of course, there are of many problems with mapping environment nomenclature to an actual domain
 # Unfortunately split-horizon is currently not an option, current reason unknown, hopefully that changes.
 
+provider "aws" {
+  alias = "red"
+  profile = "ec2-default"
+  region  = var.region
+
+  assume_role {
+    role_arn    = "arn:aws:iam::565378680304:role/goadmin_route53"
+  }
+}
+
+# Please run "terraform import aws_route53_zone.infra_dns Z1G33JXZ3XRD06" for imedidata.net
+# Please run "terraform import aws_route53_zone.infra_dns Z2GIL58FEC0H55" for imedidata.com
+
 resource "aws_route53_zone" "infra_dns" {
-  name = "${var.infra_zone["${var.infra_environment}"]}" # imedidata.net or .com
+  name     = "${var.infra_zone["${var.infra_environment}"]}" # imedidata.net or .com
+  provider = aws.red  
+  comment  = (var.infra_environment == "development" ? var.non_prod_comment : var.prod_comment)
 }
 
 resource "aws_route53_record" "infra_dns_record" {
+  provider        = aws.red
   zone_id         = "${aws_route53_zone.infra_dns.zone_id}"
   name            = "${var.project_name}-${var.project_environment}.${var.infra_zone["${var.infra_environment}"]}"
   type            = "A"

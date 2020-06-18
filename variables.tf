@@ -87,6 +87,16 @@ variable "infra_zone" {
     }
 }
 
+variable "non_prod_comment" {
+    type = string
+    description = "Non-Production imedidata domain"
+}
+
+variable "prod_comment" {
+    type = string
+    description = "Production imedidata domain"
+}
+
 variable "project_environment" {
     type = string
     description = "What environment is this project in sandbox, distro, production, etc"
