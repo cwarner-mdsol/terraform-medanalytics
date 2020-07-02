@@ -2,9 +2,9 @@
 
 Provide a Terraform plan that:
 
-SINGLE INSTANCE - Spins up one (1) ec2 instance of the following types (c5.4xlarge, m5.4xlarge, r5.4xlarge) dependent on the environment backed by two (2) gp2 ebs volume. A default minimum 50 GiB for the root partition and 100 GiB for the Tableau Server, provisioned iops will be optional. Default operating system will be Ubuntu 16.04. The VPC for spin up will be either vpc-be39dfda which is our development vpc or vpc-e6033282 which is our production vpc account.
+SINGLE INSTANCE - Spins up one (1) ec2 instance of the following types (c5.4xlarge, m5.4xlarge, r5.4xlarge) dependent on the environment backed by two (2) gp2 ebs volumes. A default minimum 50 GiB for the root partition and 100 GiB for the Tableau Server, provisioned iops will be optional. Default operating system will be Ubuntu 16.04. The VPC for spin up will be either vpc-be39dfda which is our development vpc or vpc-e6033282 which is our production vpc account.
 
-CLUSTERED INSTANCE - Spins up three (3) ec2 instances of the following types (c5.4xlarge, m5.4xlarge, r5.4xlarge) dependent on the environment backed by two (2) gp2 ebs volume. A default minimum 50 GiB for the root partition and 100 GiB for the Tableau Server, provisioned iops will be optional. Default operating system will be Ubuntu 16.04. The VPC for spin up will be either vpc-be39dfda which is our development vpc or vpc-e6033282 which is our production vpc account.
+CLUSTERED INSTANCE - Spins up three (3) ec2 instances of the following types (c5.4xlarge, m5.4xlarge, r5.4xlarge) dependent on the environment backed by two (2) gp2 ebs volumes. A default minimum 50 GiB for the root partition and 100 GiB for the Tableau Server, provisioned iops will be optional. Default operating system will be Ubuntu 16.04. The VPC for spin up will be either vpc-be39dfda which is our development vpc or vpc-e6033282 which is our production vpc account.
 
 CLUSTERED INSTANCE - Create an ELB and target group. Register all three ec2 instances into a target group.
 
@@ -41,6 +41,6 @@ Export your AWS_ACCESS_KEY_ID or AWS_SECRET_ACCESS_KEY for green/red or spin thi
  * 53 - cwarnerterra-sandbox.imedidata.net. record A ALIAS which points to the Classic ELB
  
  ## Tracking artifacts
- In the case of terraform the current "state" of the artifacts tracked is in the terraform.tfstate file. If changes are to be made they should always be modified there first and terraform rerun. Hooks can be added to note file modification and/or commit/push and perform some action for review there.
+In the case of terraform the current "state" of the artifacts tracked is in the terraform.tfstate file. If changes are to be made they should always be modified there first and terraform rerun. Hooks can be added to note file modification and/or commit/push and perform some action for review there.
 
  
