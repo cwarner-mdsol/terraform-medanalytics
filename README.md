@@ -38,7 +38,7 @@ Export your AWS_ACCESS_KEY_ID or AWS_SECRET_ACCESS_KEY for green/red or spin thi
  * EC2 - Count (in this case 3) cwarnerterra-sandbox-runtest
  * ELB - Classic ELB named cwarnerterra-sandbox with SSL arns (via our red account) and the 3 instances assigned
  * IAM - cwarnerterra-sandbox role with cloudinfr-base attached (default managed policy from the cloudinfrastructure team)
- * 53 - cwarnerterra-sandbox.imedidata.net. record A ALIAS which points to the Classic ELB
+ * 53 - cwarnerterra-sandbox.imedidata.net. record A ALIAS which points to a Classic ELB
  
  ## Tracking artifacts
 In the case of terraform the current "state" of the artifacts tracked is in the terraform.tfstate file. If changes are to be made they should always be modified there first and terraform rerun. Hooks can be added to note file modification and/or commit/push and perform some action for review there.
